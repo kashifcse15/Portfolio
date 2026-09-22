@@ -1,31 +1,31 @@
 export const skillCategories = [
   {
-    id: "languages",
+    id: "LANGUAGES",
     label: "LANGUAGES",
     number: "01",
   },
   {
-    id: "frontend",
+    id: "FRONTEND",
     label: "FRONTEND",
     number: "02",
   },
   {
-    id: "backend",
+    id: "BACKEND",
     label: "BACKEND",
     number: "03",
   },
   {
-    id: "3d-motion",
+    id: "3D / MOTION",
     label: "3D / MOTION",
     number: "04",
   },
   {
-    id: "cloud-devops",
+    id: "CLOUD / DEVOPS",
     label: "CLOUD / DEVOPS",
     number: "05",
   },
   {
-    id: "tools",
+    id: "TOOLS",
     label: "TOOLS",
     number: "06",
   },
