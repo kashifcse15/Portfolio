@@ -1,12 +1,29 @@
 "use client";
 
-export default function SkillCard() {
-  return (
-    <div className="skill-card-float relative h-[320px] w-[210px] shrink-0">
-      {/* Outer atmospheric glow */}
-      <div className="absolute -inset-3 rounded-[22px] bg-orange-500/10 blur-2xl" />
+type SkillCardProps = {
+  skill: {
+    number: string;
+    name: string;
+    category: string;
+    icon: string;
+    summary: string;
+    topics: string[];
+  };
+};
 
-      {/* Main card */}
+export default function SkillCard({ skill }: SkillCardProps) {
+  return (
+    <div className="skill-card-float relative h-[380px] w-[230px] shrink-0">
+      {/* ===================================================== */}
+      {/* OUTER AMBIENT GLOW */}
+      {/* ===================================================== */}
+
+      <div className="absolute -inset-4 bg-orange-500/[0.08] blur-2xl transition-all duration-500 group-hover:bg-orange-500/[0.16]" />
+
+      {/* ===================================================== */}
+      {/* CARD */}
+      {/* ===================================================== */}
+
       <div
         className="
           group
@@ -14,134 +31,202 @@ export default function SkillCard() {
           h-full
           w-full
           overflow-hidden
-          border border-orange-400/70
-          bg-[#070707]/90
-          shadow-[0_0_30px_rgba(255,115,0,0.14)]
-          backdrop-blur-md
-          transition-all duration-500
-          hover:scale-[1.04]
-          hover:border-orange-300
-          hover:shadow-[0_0_45px_rgba(255,115,0,0.30)]
+          border
+          border-orange-400/60
+          bg-[#050607]/95
+          shadow-[0_0_25px_rgba(255,95,0,0.10)]
+          backdrop-blur-xl
+          transition-all
+          duration-500
+          hover:-translate-y-2
+          hover:border-orange-300/90
+          hover:shadow-[0_0_45px_rgba(255,100,0,0.25)]
         "
         style={{
           clipPath:
-            "polygon(9% 0%, 91% 0%, 100% 9%, 100% 91%, 91% 100%, 9% 100%, 0% 91%, 0% 9%)",
+            "polygon(7% 0%, 93% 0%, 100% 7%, 100% 93%, 93% 100%, 7% 100%, 0% 93%, 0% 7%)",
         }}
       >
-        {/* Inner frame */}
+        {/* ================================================= */}
+        {/* INNER FRAME */}
+        {/* ================================================= */}
+
         <div
-          className="pointer-events-none absolute inset-[3px] border border-orange-500/20"
+          className="pointer-events-none absolute inset-[4px] border border-orange-500/[0.18]"
           style={{
             clipPath:
-              "polygon(9% 0%, 91% 0%, 100% 9%, 100% 91%, 91% 100%, 9% 100%, 0% 91%, 0% 9%)",
+              "polygon(7% 0%, 93% 0%, 100% 7%, 100% 93%, 93% 100%, 7% 100%, 0% 93%, 0% 7%)",
           }}
         />
 
-        {/* Top metallic highlight */}
-        <div className="absolute left-[8%] right-[8%] top-0 h-px bg-gradient-to-r from-transparent via-orange-300 to-transparent opacity-80" />
+        {/* ================================================= */}
+        {/* TOP EDGE LIGHT */}
+        {/* ================================================= */}
 
-        {/* Orange corner lights */}
-        <div className="absolute left-4 top-4 h-[2px] w-8 bg-orange-400 shadow-[0_0_10px_rgba(255,140,40,0.8)]" />
-        <div className="absolute right-4 top-4 h-[2px] w-4 bg-orange-400/70" />
+        <div className="absolute left-[9%] right-[9%] top-0 h-px bg-gradient-to-r from-transparent via-orange-300/90 to-transparent shadow-[0_0_10px_rgba(255,130,40,0.7)]" />
 
-        {/* Number */}
-        <div className="absolute left-5 top-5">
-          <span className="font-mono text-[11px] font-semibold tracking-[0.3em] text-orange-300">
-            01
+        {/* Small orange top corners */}
+        <div className="absolute left-5 top-5 h-[2px] w-9 bg-orange-400 shadow-[0_0_8px_rgba(255,120,20,0.8)]" />
+
+        <div className="absolute right-5 top-5 h-[2px] w-5 bg-orange-400/60" />
+
+        {/* ================================================= */}
+        {/* NUMBER */}
+        {/* ================================================= */}
+
+        <div className="absolute left-6 top-6 z-20">
+          <span className="font-mono text-[11px] font-semibold tracking-[0.35em] text-orange-300">
+            {skill.number}
           </span>
 
-          <div className="mt-1 h-[2px] w-2 bg-orange-500" />
+          <div className="mt-1.5 h-[2px] w-3 bg-orange-500 shadow-[0_0_8px_rgba(255,100,0,0.9)]" />
         </div>
 
-        {/* Arrow */}
-        <div className="absolute right-5 top-4">
-          <span className="font-mono text-lg text-orange-300 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+        {/* ================================================= */}
+        {/* ARROW */}
+        {/* ================================================= */}
+
+        <div className="absolute right-6 top-5 z-20">
+          <span className="font-mono text-lg text-orange-300/80 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-orange-200">
             ↗
           </span>
         </div>
 
-        {/* Subtle scan/grid texture */}
-        <div className="pointer-events-none absolute inset-0 opacity-[0.06]">
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,120,0,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,120,0,0.5)_1px,transparent_1px)] bg-[size:22px_22px]" />
+        {/* ================================================= */}
+        {/* BACKGROUND GRID */}
+        {/* ================================================= */}
+
+        <div className="pointer-events-none absolute inset-0 opacity-[0.035]">
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,120,0,0.8)_1px,transparent_1px),linear-gradient(90deg,rgba(255,120,0,0.8)_1px,transparent_1px)] bg-[size:24px_24px]" />
         </div>
 
-        {/* Central glow */}
-        <div className="absolute left-1/2 top-[43%] h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-500/5 blur-3xl" />
+        {/* ================================================= */}
+        {/* VERTICAL SCAN LIGHT */}
+        {/* ================================================= */}
 
-        {/* Content */}
-        <div className="relative z-10 flex h-full flex-col items-center justify-center px-5">
-          {/* C++ badge */}
+        <div className="pointer-events-none absolute right-0 top-[20%] h-[35%] w-px bg-gradient-to-b from-transparent via-orange-400/50 to-transparent" />
+
+        <div className="pointer-events-none absolute left-0 top-[55%] h-[20%] w-px bg-gradient-to-b from-transparent via-orange-500/30 to-transparent" />
+
+        {/* ================================================= */}
+        {/* CENTRAL ATMOSPHERIC GLOW */}
+        {/* ================================================= */}
+
+        <div className="pointer-events-none absolute left-1/2 top-[43%] h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-500/[0.045] blur-3xl transition-all duration-700 group-hover:bg-orange-500/[0.10]" />
+
+        {/* ================================================= */}
+        {/* MAIN CONTENT */}
+        {/* ================================================= */}
+
+        <div className="relative z-10 flex h-full flex-col items-center justify-center px-6">
+
+          {/* ================================================= */}
+          {/* ICON CONTAINER */}
+          {/* ================================================= */}
+
           <div
             className="
               relative
-              mb-7
+              mb-8
               flex
-              h-[92px]
-              w-[92px]
+              h-[125px]
+              w-[125px]
               items-center
               justify-center
               border
-              border-orange-400/50
+              border-orange-400/45
               bg-gradient-to-br
-              from-orange-500/[0.12]
-              to-transparent
-              shadow-[inset_0_0_25px_rgba(255,100,0,0.08)]
+              from-orange-500/[0.10]
+              via-transparent
+              to-orange-500/[0.02]
+              shadow-[inset_0_0_35px_rgba(255,100,0,0.06)]
               transition-all
               duration-500
-              group-hover:border-orange-300
-              group-hover:shadow-[0_0_25px_rgba(255,100,0,0.15)]
+              group-hover:border-orange-300/80
+              group-hover:shadow-[0_0_30px_rgba(255,100,0,0.12),inset_0_0_35px_rgba(255,100,0,0.08)]
             "
             style={{
               clipPath:
                 "polygon(12% 0%, 88% 0%, 100% 12%, 100% 88%, 88% 100%, 12% 100%, 0% 88%, 0% 12%)",
             }}
           >
-            {/* Badge inner line */}
-            <div className="absolute inset-2 border border-orange-400/10" />
+            {/* Inner icon frame */}
+            <div
+              className="absolute inset-[7px] border border-orange-400/[0.10]"
+              style={{
+                clipPath:
+                  "polygon(12% 0%, 88% 0%, 100% 12%, 100% 88%, 88% 100%, 12% 100%, 0% 88%, 0% 12%)",
+              }}
+            />
 
-            <span className="font-mono text-[25px] font-bold tracking-tight text-orange-300 drop-shadow-[0_0_10px_rgba(255,130,40,0.35)]">
-              C++
-            </span>
+            {/* Icon */}
+            <img
+              src={skill.icon}
+              alt={skill.name}
+              className="relative z-10 h-[78px] w-[78px] object-contain drop-shadow-[0_0_12px_rgba(255,130,40,0.20)] transition-transform duration-500 group-hover:scale-110"
+            />
 
-            {/* Small tech marks */}
-            <span className="absolute bottom-2 left-3 text-[7px] tracking-widest text-orange-400/50">
+            {/* Tiny system labels */}
+            <span className="absolute bottom-3 left-4 font-mono text-[7px] tracking-[0.25em] text-orange-400/40">
               SYS
             </span>
 
-            <span className="absolute right-3 top-2 text-[7px] tracking-widest text-orange-400/50">
-              01
+            <span className="absolute right-4 top-3 font-mono text-[7px] tracking-[0.2em] text-orange-400/40">
+              {skill.number}
             </span>
           </div>
 
-          {/* Name */}
-          <h2 className="font-mono text-[25px] font-bold tracking-[0.08em] text-white">
-            C++
+          {/* ================================================= */}
+          {/* SKILL NAME */}
+          {/* ================================================= */}
+
+          <h2 className="max-w-full truncate px-2 text-center font-mono text-[25px] font-bold tracking-[0.06em] text-white">
+            {skill.name}
           </h2>
 
-          {/* Category */}
-          <p className="mt-3 font-mono text-[9px] font-medium tracking-[0.42em] text-orange-300/80">
-            LANGUAGES
+          {/* ================================================= */}
+          {/* CATEGORY */}
+          {/* ================================================= */}
+
+          <p className="mt-3 text-center font-mono text-[9px] font-medium tracking-[0.35em] text-orange-300/75">
+            {skill.category}
           </p>
         </div>
 
-        {/* Bottom separator */}
-        <div className="absolute bottom-7 left-7 right-7">
-          <div className="h-px bg-gradient-to-r from-transparent via-orange-400 to-transparent shadow-[0_0_10px_rgba(255,110,20,0.7)]" />
+        {/* ================================================= */}
+        {/* BOTTOM SYSTEM BAR */}
+        {/* ================================================= */}
 
-          <div className="mt-2 flex items-center justify-between">
-            <span className="font-mono text-[7px] tracking-[0.3em] text-orange-300/40">
+        <div className="absolute bottom-7 left-7 right-7">
+          {/* Orange line */}
+          <div className="h-px bg-gradient-to-r from-transparent via-orange-400/90 to-transparent shadow-[0_0_10px_rgba(255,100,0,0.7)]" />
+
+          <div className="mt-2.5 flex items-center justify-between">
+            <span className="font-mono text-[7px] tracking-[0.3em] text-orange-300/35">
               SYSTEM
             </span>
 
-            <span className="font-mono text-[7px] tracking-[0.25em] text-orange-300/40">
+            <span className="font-mono text-[7px] tracking-[0.25em] text-orange-300/35">
               ACTIVE
             </span>
           </div>
         </div>
 
-        {/* Bottom corner lights */}
-        <div className="absolute bottom-6 left-5 h-1 w-1 bg-orange-400 shadow-[0_0_7px_rgba(255,140,40,0.9)]" />
-        <div className="absolute bottom-6 right-5 h-1 w-1 bg-orange-400 shadow-[0_0_7px_rgba(255,140,40,0.9)]" />
+        {/* ================================================= */}
+        {/* BOTTOM CORNER LIGHTS */}
+        {/* ================================================= */}
+
+        <div className="absolute bottom-6 left-5 h-1 w-1 bg-orange-400 shadow-[0_0_8px_rgba(255,130,40,0.9)]" />
+
+        <div className="absolute bottom-6 right-5 h-1 w-1 bg-orange-400 shadow-[0_0_8px_rgba(255,130,40,0.9)]" />
+
+        {/* ================================================= */}
+        {/* SIDE MICRO DETAILS */}
+        {/* ================================================= */}
+
+        <div className="absolute left-4 top-1/2 h-8 w-px -translate-y-1/2 bg-orange-500/30" />
+
+        <div className="absolute right-4 top-1/2 h-8 w-px -translate-y-1/2 bg-orange-500/30" />
       </div>
     </div>
   );
