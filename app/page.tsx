@@ -50,29 +50,25 @@ export default function Home() {
 
 
           {/* Page 2 Content */}
+          {/* Page 2 Content */}
           <div className="relative z-10 flex min-h-screen flex-col">
 
-            {/* ================= CATEGORY NAVIGATION ================= */}
-
-            <div className="pt-24">
+            {/* Category Navigation */}
+            <div className="flex justify-center pt-28 mt-30">
               <SkillCategories
                 activeCategory={activeCategory}
                 setActiveCategory={setActiveCategory}
               />
             </div>
 
-
-            {/* ================= SKILL CARDS ================= */}
-
-            <div className="flex flex-1 items-center justify-center gap-7 px-8 py-12">
-
+            {/* Skill Cards */}
+            <div className="flex flex-1 items-center justify-center gap-10 px-8 pb-20">
               {filteredSkills.map((skill) => (
                 <SkillCard
                   key={skill.number}
                   skill={skill}
                 />
               ))}
-
             </div>
 
           </div>

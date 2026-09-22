@@ -13,7 +13,7 @@ type SkillCardProps = {
 
 export default function SkillCard({ skill }: SkillCardProps) {
   return (
-    <div className="skill-card-float relative h-[380px] w-[230px] shrink-0">
+<div className="skill-card-float relative h-[910px] w-[600px] shrink-0 left-200">
       {/* ===================================================== */}
       {/* OUTER AMBIENT GLOW */}
       {/* ===================================================== */}
@@ -38,7 +38,7 @@ export default function SkillCard({ skill }: SkillCardProps) {
           backdrop-blur-xl
           transition-all
           duration-500
-          hover:-translate-y-2
+          hover:-translate-y-4
           hover:border-orange-300/90
           hover:shadow-[0_0_45px_rgba(255,100,0,0.25)]
         "
@@ -75,7 +75,7 @@ export default function SkillCard({ skill }: SkillCardProps) {
         {/* ================================================= */}
 
         <div className="absolute left-6 top-6 z-20">
-          <span className="font-mono text-[11px] font-semibold tracking-[0.35em] text-orange-300">
+          <span className="font-mono text-[50px] font-semibold tracking-[0.35em] text-orange-300">
             {skill.number}
           </span>
 
@@ -87,7 +87,7 @@ export default function SkillCard({ skill }: SkillCardProps) {
         {/* ================================================= */}
 
         <div className="absolute right-6 top-5 z-20">
-          <span className="font-mono text-lg text-orange-300/80 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-orange-200">
+          <span className="font-mono text-[50px] text-orange-300/80 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-orange-200">
             ↗
           </span>
         </div>
@@ -118,7 +118,7 @@ export default function SkillCard({ skill }: SkillCardProps) {
         {/* MAIN CONTENT */}
         {/* ================================================= */}
 
-        <div className="relative z-10 flex h-full flex-col items-center justify-center px-6">
+        <div className="relative z-10 flex h-full flex-col mt-40 ml-39 px-6">
 
           {/* ================================================= */}
           {/* ICON CONTAINER */}
@@ -129,8 +129,8 @@ export default function SkillCard({ skill }: SkillCardProps) {
               relative
               mb-8
               flex
-              h-[125px]
-              w-[125px]
+              h-[250px]
+              w-[250px]
               items-center
               justify-center
               border
@@ -163,7 +163,7 @@ export default function SkillCard({ skill }: SkillCardProps) {
             <img
               src={skill.icon}
               alt={skill.name}
-              className="relative z-10 h-[78px] w-[78px] object-contain drop-shadow-[0_0_12px_rgba(255,130,40,0.20)] transition-transform duration-500 group-hover:scale-110"
+              className="relative z-10 h-[88px] w-[88px] object-contain drop-shadow-[0_0_12px_rgba(255,130,40,0.20)] transition-transform duration-500 group-hover:scale-110"
             />
 
             {/* Tiny system labels */}
@@ -180,7 +180,7 @@ export default function SkillCard({ skill }: SkillCardProps) {
           {/* SKILL NAME */}
           {/* ================================================= */}
 
-          <h2 className="max-w-full truncate px-2 text-center font-mono text-[25px] font-bold tracking-[0.06em] text-white">
+          <h2 className="max-w-full truncate px-2 mt-10 font-mono text-[85px] font-bold tracking-[0.06em] text-white">
             {skill.name}
           </h2>
 
@@ -188,7 +188,7 @@ export default function SkillCard({ skill }: SkillCardProps) {
           {/* CATEGORY */}
           {/* ================================================= */}
 
-          <p className="mt-3 text-center font-mono text-[9px] font-medium tracking-[0.35em] text-orange-300/75">
+          <p className="mt-3  font-mono text-[39px] font-medium tracking-[0.35em] text-orange-300/75">
             {skill.category}
           </p>
         </div>

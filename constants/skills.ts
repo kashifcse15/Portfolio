@@ -35,7 +35,7 @@ export const skills = [
 
   {
     number: "04",
-    name: "JavaScript",
+    name: "JS",
     category: "LANGUAGES",
     icon: "/icons/javascript.png",
     summary:
@@ -45,7 +45,7 @@ export const skills = [
 
   {
     number: "05",
-    name: "TypeScript",
+    name: "TS",
     category: "LANGUAGES",
     icon: "/icons/typescript.png",
     summary:
@@ -79,7 +79,7 @@ export const skills = [
 
   {
     number: "08",
-    name: "Tailwind CSS",
+    name: "TailW",
     category: "FRONTEND",
     icon: "/icons/tailwind.png",
     summary:
@@ -99,7 +99,7 @@ export const skills = [
 
   {
     number: "10",
-    name: "Framer Motion",
+    name: "FrameM",
     category: "FRONTEND",
     icon: "/icons/framer-motion.png",
     summary:
@@ -113,7 +113,7 @@ export const skills = [
 
   {
     number: "11",
-    name: "Node.js",
+    name: "Node",
     category: "BACKEND",
     icon: "/icons/nodejs.png",
     summary:
@@ -123,7 +123,7 @@ export const skills = [
 
   {
     number: "12",
-    name: "MongoDB",
+    name: "Mongo",
     category: "BACKEND",
     icon: "/icons/mongodb.png",
     summary:
@@ -143,7 +143,7 @@ export const skills = [
 
   {
     number: "14",
-    name: "Supabase",
+    name: "SupaB",
     category: "BACKEND",
     icon: "/icons/supabase.png",
     summary:
@@ -157,7 +157,7 @@ export const skills = [
 
   {
     number: "15",
-    name: "Three.js",
+    name: "3JS",
     category: "3D / MOTION",
     icon: "/icons/threejs.png",
     summary:
@@ -167,7 +167,7 @@ export const skills = [
 
   {
     number: "16",
-    name: "React Three Fiber",
+    name: "R3F",
     category: "3D / MOTION",
     icon: "/icons/r3f.png",
     summary:
@@ -251,7 +251,7 @@ export const skills = [
 
   {
     number: "24",
-    name: "CI / CD",
+    name: "CI/CD",
     category: "CLOUD / DEVOPS",
     icon: "/icons/cicd.png",
     summary:
@@ -261,7 +261,7 @@ export const skills = [
 
   {
     number: "25",
-    name: "Kubernetes",
+    name: "Kuber",
     category: "CLOUD / DEVOPS",
     icon: "/icons/kubernetes.png",
     summary:

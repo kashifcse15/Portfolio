@@ -12,8 +12,8 @@ export default function SkillCategories({
   setActiveCategory,
 }: SkillCategoriesProps) {
   return (
-    <nav className="w-full overflow-x-auto">
-      <div className="flex min-w-max items-center border-y border-orange-500/20">
+    <nav className="flex w-full justify-center px-6 translate-x-200 translate-y-100">
+      <div className="flex items-center gap-4">
         {skillCategories.map((category) => {
           const isActive = activeCategory === category.id;
 
@@ -25,59 +25,105 @@ export default function SkillCategories({
                 group
                 relative
                 flex
-                h-[64px]
+                h-[100px]
+                min-w-[350px]
                 items-center
-                gap-8
-                border-r
-                border-orange-500/20
-                px-8
+                justify-center
+                gap-5
+                px-7
                 font-mono
                 transition-all
                 duration-300
+
                 ${
                   isActive
-                    ? "bg-orange-500/[0.08] text-orange-400"
-                    : "text-white/60 hover:bg-orange-500/[0.04] hover:text-white"
+                    ? `
+                      border
+                      border-orange-400
+                      bg-orange-500/[0.10]
+                      text-orange-300
+                      shadow-[0_0_25px_rgba(255,100,0,0.18)]
+                    `
+                    : `
+                      border
+                      border-transparent
+                      bg-transparent
+                      text-white/55
+                      hover:text-white
+                    `
                 }
               `}
             >
               {/* Category name */}
-              <span className="text-sm font-semibold tracking-[0.2em]">
+              <span
+                className={`
+                  whitespace-nowrap
+                  text-[50px]
+                  font-semibold
+                  tracking-[0.18em]
+                  transition-all
+                  duration-300
+
+                  ${
+                    isActive
+                      ? "text-orange-300"
+                      : "text-white/60 group-hover:text-orange-200"
+                  }
+                `}
+              >
                 {category.label}
               </span>
 
               {/* Number */}
               <span
                 className={`
-                  text-xs tracking-[0.2em]
+                  text-[13px]
+                  tracking-[0.2em]
+                  transition-colors
+                  duration-300
+
                   ${
                     isActive
                       ? "text-orange-400"
-                      : "text-white/30 group-hover:text-orange-400/70"
+                      : "text-white/25 group-hover:text-orange-400/70"
                   }
                 `}
               >
                 {category.number}
               </span>
 
-              {/* Active underline */}
+              {/* Active bottom line */}
               <span
                 className={`
                   absolute
                   bottom-0
-                  left-0
+                  left-[15%]
                   h-[2px]
-                  bg-orange-500
-                  shadow-[0_0_12px_rgba(249,115,22,0.8)]
+                  bg-orange-400
+                  shadow-[0_0_12px_rgba(255,100,0,0.9)]
                   transition-all
                   duration-300
+
                   ${
                     isActive
-                      ? "w-full"
-                      : "w-0 group-hover:w-full"
+                      ? "w-[70%]"
+                      : "w-0"
                   }
                 `}
               />
+
+              {/* Active corner indicator */}
+              {isActive && (
+                <>
+                  <span className="absolute left-2 top-2 h-1.5 w-1.5 bg-orange-400 shadow-[0_0_8px_rgba(255,120,30,1)]" />
+
+                  <span className="absolute right-2 top-2 h-1.5 w-1.5 bg-orange-400 shadow-[0_0_8px_rgba(255,120,30,1)]" />
+
+                  <span className="absolute bottom-2 left-2 h-1.5 w-1.5 bg-orange-400 shadow-[0_0_8px_rgba(255,120,30,1)]" />
+
+                  <span className="absolute bottom-2 right-2 h-1.5 w-1.5 bg-orange-400 shadow-[0_0_8px_rgba(255,120,30,1)]" />
+                </>
+              )}
             </button>
           );
         })}
