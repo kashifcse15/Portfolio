@@ -13,7 +13,7 @@ type SkillCardProps = {
 
 export default function SkillCard({ skill }: SkillCardProps) {
   return (
-<div className="skill-card-float relative h-[910px] w-[600px] shrink-0 left-200">
+    <div className="skill-card-float relative h-[910px] w-[600px] shrink-0 left-200">
       {/* ===================================================== */}
       {/* OUTER AMBIENT GLOW */}
       {/* ===================================================== */}
@@ -159,11 +159,21 @@ export default function SkillCard({ skill }: SkillCardProps) {
               }}
             />
 
-            {/* Icon */}
-            <img
-              src={skill.icon}
-              alt={skill.name}
-              className="relative z-10 h-[88px] w-[88px] object-contain drop-shadow-[0_0_12px_rgba(255,130,40,0.20)] transition-transform duration-500 group-hover:scale-110"
+            <i
+              className={`
+    ${skill.icon}
+    relative
+    z-10
+    text-[88px]
+    transition-transform
+    duration-500
+    group-hover:scale-110
+  `}
+              style={{
+                filter:
+                  "brightness(0) saturate(100%) invert(58%) sepia(95%) saturate(2500%) hue-rotate(5deg) brightness(105%) contrast(105%)",
+              }}
+              aria-hidden="true"
             />
 
             {/* Tiny system labels */}
