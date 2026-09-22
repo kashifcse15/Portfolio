@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import Scene from "@/components/Scene";
 import PageTransitions from "@/components/PageTransitions";
+import SkillCard from "@/components/SkillCard";
 
 export default function Home() {
   return (
@@ -31,9 +32,9 @@ export default function Home() {
             />
           </div>
 
-          {/* Future skill cards */}
-          <div className="relative z-10 h-full">
-            {/* Skill cards will go here */}
+          {/* C++ Card */}
+          <div className="relative z-10 flex h-full items-center justify-center">
+            <SkillCard />
           </div>
 
         </section>
