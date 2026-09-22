@@ -10,6 +10,19 @@ export default function Hero() {
           className="h-full w-full object-cover"
         />
       </div>
+      {/* <div className="absolute inset-0 -z-10">
+  <video
+    src="/videos/portfolio-bg.mp4"
+    autoPlay
+    loop
+    muted
+    playsInline
+    preload="auto"
+    className="h-full w-full object-cover"
+  />
+
+  <div className="absolute inset-0 bg-black/20" />
+</div> */}
     </section>
   );
 }

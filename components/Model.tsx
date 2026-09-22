@@ -7,21 +7,25 @@ import * as THREE from "three";
 
 export default function Model() {
   const { scene } = useGLTF("/models/portfolio.glb");
+
   const modelRef = useRef<THREE.Group>(null);
 
-  useFrame((_, delta) => {
-    if (modelRef.current) {
-      modelRef.current.rotation.y += delta * 0.5;
-    }
-  });
+ useFrame((_, delta) => {
+  if (modelRef.current) {
+    modelRef.current.rotation.y += delta * 0.5;
+  }
+});
 
-  return (
+return (
+  <group
+    ref={modelRef}
+    position={[2, 0, 0]}
+  >
     <primitive
-      ref={modelRef}
       object={scene}
-      scale={1}
+      scale={2}
     />
-  );
+  </group>
+);
 }
-
 useGLTF.preload("/models/portfolio.glb");
