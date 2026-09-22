@@ -35,6 +35,12 @@ export default function Home() {
           {/* C++ Card */}
           <div className="relative z-10 flex h-full items-center justify-center">
             <SkillCard />
+            <SkillCard />
+            <SkillCard />
+            <SkillCard />
+            <SkillCard />
+
+
           </div>
 
         </section>
