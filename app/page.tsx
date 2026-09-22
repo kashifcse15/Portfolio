@@ -1,34 +1,44 @@
 import Hero from "@/components/Hero";
 import Scene from "@/components/Scene";
+import PageTransitions from "@/components/PageTransitions";
 
 export default function Home() {
   return (
-    <main>
-      {/* ================= PAGE 1 ================= */}
-      <section className="relative h-screen overflow-hidden">
-        <Hero />
+    <PageTransitions>
+      <main>
 
-        <div className="absolute inset-0 z-10 h-screen w-screen">
-          <Scene />
-        </div>
-      </section>
+        {/* ================= PAGE 1 ================= */}
 
-      {/* ================= PAGE 2 ================= */}
-      <section className="relative h-screen overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0">
-          <img
-            src="/images/skills-bg.png"
-            alt=""
-            className="h-full w-full object-cover"
-          />
-        </div>
+        <section className="portfolio-page-1 relative h-screen overflow-hidden">
+          <Hero />
 
-        {/* Content will go here */}
-        <div className="relative z-10 h-full">
-          {/* Skill cards later */}
-        </div>
-      </section>
-    </main>
+          <div className="absolute inset-0 z-10 h-screen w-screen">
+            <Scene />
+          </div>
+        </section>
+
+
+        {/* ================= PAGE 2 ================= */}
+
+        <section className="portfolio-page-2 relative h-screen overflow-hidden">
+
+          {/* Background */}
+          <div className="absolute inset-0">
+            <img
+              src="/images/skills-bg.png"
+              alt=""
+              className="h-full w-full object-cover"
+            />
+          </div>
+
+          {/* Future skill cards */}
+          <div className="relative z-10 h-full">
+            {/* Skill cards will go here */}
+          </div>
+
+        </section>
+
+      </main>
+    </PageTransitions>
   );
 }
